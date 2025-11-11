@@ -344,6 +344,16 @@ impl SecurityLayer {
         Ok(context)
     }
 
+    /// Synchronous version of process_request for FFI bindings
+    pub fn process_request_sync<B>(
+        &self,
+        request: &Request<B>,
+    ) -> SecurityResult<SecurityContext> {
+        // Create a runtime for executing async code synchronously
+        let rt = tokio::runtime::Runtime::new().unwrap();
+        rt.block_on(self.process_request(request))
+    }
+
     fn extract_client_ip<B>(&self, request: &Request<B>) -> String {
         // Try X-Forwarded-For, X-Real-IP, or connection IP
         request

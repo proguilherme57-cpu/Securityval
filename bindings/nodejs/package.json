@@ -1,0 +1,43 @@
+{
+  "name": "secureapis",
+  "version": "1.0.0",
+  "description": "High-performance security middleware for Node.js applications",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "node-gyp rebuild",
+    "build:rust": "cd ../../ && cargo build --release",
+    "install": "node-gyp rebuild",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "security",
+    "middleware",
+    "rate-limiting",
+    "authentication",
+    "input-validation",
+    "rust",
+    "ffi"
+  ],
+  "author": "SecureAPIs Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "node-addon-api": "^5.0.0"
+  },
+  "devDependencies": {
+    "node-gyp": "^9.0.0"
+  },
+  "gypfile": true,
+  "os": [
+    "linux",
+    "darwin",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ]
+}

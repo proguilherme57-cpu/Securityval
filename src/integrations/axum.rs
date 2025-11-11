@@ -1,11 +1,10 @@
 use axum::{
-    body::Body,
     extract::Request,
     http::StatusCode,
     middleware::Next,
     response::{IntoResponse, Response},
 };
-use secureapis::{SecurityConfig, SecurityLayer};
+use crate::{SecurityConfig, SecurityLayer, SecurityError};
 use std::sync::Arc;
 
 /// Axum middleware for security layer
@@ -31,20 +30,20 @@ impl AxumSecurityMiddleware {
             Err(error) => {
                 // Security check failed, return error response
                 let (status, message) = match error {
-                    secureapis::SecurityError::RateLimitExceeded { retry_after } => (
+                    SecurityError::RateLimitExceeded { retry_after } => (
                         StatusCode::TOO_MANY_REQUESTS,
                         format!("Rate limit exceeded. Retry after {} seconds", retry_after),
                     ),
-                    secureapis::SecurityError::AuthenticationFailed(msg) => {
+                    SecurityError::AuthenticationFailed(msg) => {
                         (StatusCode::UNAUTHORIZED, msg)
                     }
-                    secureapis::SecurityError::AuthorizationFailed(msg) => {
+                    SecurityError::AuthorizationFailed(msg) => {
                         (StatusCode::FORBIDDEN, msg)
                     }
-                    secureapis::SecurityError::InvalidInput { reason, .. } => {
+                    SecurityError::InvalidInput { reason, .. } => {
                         (StatusCode::BAD_REQUEST, reason)
                     }
-                    secureapis::SecurityError::ThreatDetected { threat_type, .. } => {
+                    SecurityError::ThreatDetected { threat_type, .. } => {
                         (StatusCode::FORBIDDEN, format!("Threat detected: {}", threat_type))
                     }
                     _ => (StatusCode::INTERNAL_SERVER_ERROR, "Internal error".to_string()),

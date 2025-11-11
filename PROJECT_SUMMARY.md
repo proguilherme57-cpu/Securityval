@@ -94,9 +94,26 @@ SecureAPIs (Port 3000)
   ├─ Check threat patterns
   └─ Add security headers
        ↓
-Your Backend API (Port 5000)
+Your Backend API (Port 5000) - ANY LANGUAGE
   └─ Process safe request
 ```
+
+### Works with ANY Language!
+
+SecureAPIs is **language-agnostic**. Deploy it as a standalone reverse proxy in front of your backend, regardless of what language your API is written in:
+
+| Language | Example Backend | How it Works |
+|----------|-----------------|-------------|
+| **.NET / C#** | ASP.NET Core | Standalone reverse proxy |
+| **Java** | Spring Boot | Standalone reverse proxy |
+| **Node.js** | Express/Fastify | Standalone reverse proxy |
+| **Python** | FastAPI/Django | Standalone reverse proxy |
+| **Go** | Gin/Echo | Standalone reverse proxy |
+| **Ruby** | Rails | Standalone reverse proxy |
+| **PHP** | Laravel | Standalone reverse proxy |
+| **Rust** | Axum/Actix | Standalone reverse proxy |
+
+**Zero code changes needed!** Read: [Multi-Language Integration Guide](docs/MULTILANGUAGE_INTEGRATION.md)
 
 ### What It Protects Against
 

@@ -9,6 +9,10 @@ repository = "https://github.com/secureapis/secureapis"
 keywords = ["security", "api", "middleware", "vulnerability", "protection"]
 categories = ["web-programming", "authentication", "cryptography"]
 
+[lib]
+name = "secureapis"
+crate-type = ["lib", "cdylib"]
+
 [dependencies]
 # Async runtime
 tokio = { version = "1.35", features = ["full"] }

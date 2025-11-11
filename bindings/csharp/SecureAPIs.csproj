@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>SecureAPIs</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>SecureAPIs Contributors</Authors>
+    <Description>High-performance API security middleware for .NET</Description>
+    <PackageTags>security,api,middleware,rust,high-performance</PackageTags>
+    <RepositoryUrl>https://github.com/secureapis/secureapis</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Include the native library for Windows -->
+    <Content Include="runtimes/win-x64/native/secureapis.dll">
+      <PackagePath>runtimes/win-x64/native/secureapis.dll</PackagePath>
+      <Pack>true</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

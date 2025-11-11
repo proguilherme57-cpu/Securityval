@@ -118,15 +118,51 @@ async fn handler() -> &'static str {
 }
 ```
 
-## Deployment
+## 🌍 Works with ANY Language!
 
-New to SecureAPIs? Follow the guides:
+SecureAPIs works as a **standalone reverse proxy** in front of your API - it doesn't matter what language your backend is written in:
 
+```
+Client → SecureAPIs (Rust) → Your Backend (ANY Language)
+                              .NET, Java, Node.js, Python, Go, Ruby, PHP...
+```
+
+**Zero code changes needed in your existing API!**
+
+**Language-Specific Setup:**
+- **[Multi-Language Integration Guide](docs/MULTILANGUAGE_INTEGRATION.md)** - Complete explanation
+- **[Setup with Common Languages](docs/SETUP_COMMON_LANGUAGES.md)** ⭐ - Copy-paste examples for .NET, Java, Node, Python, Go
+
+## Getting Started
+
+**📖 Documentation Map:** See **[docs/INDEX.md](docs/INDEX.md)** for the complete guide to all documentation.
+
+**❓ Have Questions? Start Here:**
+- **[Frequently Asked Questions (FAQ)](docs/FAQ.md)** ⭐ - "How do I use this with my language?" (Start here!)
+
+**� Ready to Set Up?**
+- **[Setup with Common Languages](docs/SETUP_COMMON_LANGUAGES.md)** - Copy-paste guides for .NET, Java, Python, Go, Node.js
 - **[Quick Start Deployment](QUICK_START_DEPLOYMENT.md)** - Get running in 5 minutes
-- **[Full Deployment Guide](DEPLOYMENT_GUIDE.md)** - Production-ready setup
-- **[Examples Guide](EXAMPLES.md)** - 10 complete working examples
 
-**Key concept:** Use SecureAPIs as a **reverse proxy** in front of your API. All requests go through it first!
+**📚 Understanding SecureAPIs:**
+1. **[FAQ](docs/FAQ.md)** (10 min) - Q&A format
+2. **[Multi-Language Integration](docs/MULTILANGUAGE_INTEGRATION.md)** (15 min) - Deep dive
+3. **[Architecture Diagrams](docs/ARCHITECTURE_DIAGRAMS.md)** (10 min) - Visual explanations
+4. **[The Complete Story](docs/THE_COMPLETE_STORY.md)** (15 min) - Full overview
+
+**🚀 Deployment:**
+- **[Quick Start Deployment](QUICK_START_DEPLOYMENT.md)** - 5 minutes
+- **[Full Deployment Guide](DEPLOYMENT_GUIDE.md)** - Production setup
+- **[Examples Guide](EXAMPLES.md)** - 10 working examples
+
+**Key Concept:** SecureAPIs is a **standalone reverse proxy** (like Nginx) that protects ANY backend:
+```
+Client → SecureAPIs (Rust binary) → Your Backend (Any Language)
+         Security checks             .NET, Java, Python, Go...
+```
+Works with ANY language—zero code changes needed!
+
+**👉 New to SecureAPIs? Start with [docs/FAQ.md](docs/FAQ.md) - Most common questions answered!**
 
 ## Benchmarks
 
